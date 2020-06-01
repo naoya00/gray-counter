@@ -20,7 +20,7 @@
     />
 
     <Counter 
-      :title="'グレイカラー（白髪ぞめ）'"
+      :title="'グレイカラー（白髪染め）'"
       :unit="'人'"
       :varName="'bad'"
       @updated="commit"
