@@ -3,7 +3,7 @@
     <h1 class="title">本日のグレイカラー率</h1>
 
     <Sticker 
-      :title="'ファッションカラー（おしゃれ染め）'"
+      :title="'カラー施術人数'"
       :unit="'人'"
       :value="good + bad" />
 
@@ -26,6 +26,32 @@
       @updated="commit"
     />
 
+    <h1 class="title">本日の総客・指名率</h1>
+
+    <Sticker 
+      :title="'総客'"
+      :unit="'人'"
+      :value="good + bad" />
+
+    <Sticker 
+      :title="'指名率'"
+      :unit="'％'"
+      :value="defectivePercent" />
+
+    <Counter 
+      :title="'指名なし'"
+      :unit="'人'"
+      :varName="'good'"
+      @updated="commit"
+    />
+
+    <Counter 
+      :title="'指名あり'"
+      :unit="'人'"
+      :varName="'bad'"
+      @updated="commit"
+    />
+
   </div>
 </template>
 
@@ -40,7 +66,9 @@ export default {
   data () {
     return {
       good: 0,
-      bad: 0
+      bad: 0,
+      Customers: 0,
+      AppointedCustomers:0
     }
   },
   computed: {
