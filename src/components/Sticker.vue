@@ -1,10 +1,10 @@
 <template>
   <div class="item">
-    <h2>{{ title }}</h2>
-    <p>
+    <div>{{ title }}</div>
+    <div>
       <span class="value">{{ value }}</span>
       <span class="unit">[ {{ unit }} ]</span>
-    </p>
+    </div>
   </div>
 </template>
 

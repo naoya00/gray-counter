@@ -1,33 +1,37 @@
 <template>
   <div class="frame">
+    <div class="custmersLow">
+      <div class="title">本日の総客・指名率</div>
 
-    <h1 class="title">本日の総客・指名率</h1>
+      <Sticker 
+        :title="'総客'"
+        :unit="'人'"
+        :value="customers + appointedCustomers" />
 
-    <Sticker 
-      :title="'総客'"
-      :unit="'人'"
-      :value="customers + appointedCustomers" />
+      <Sticker 
+        :title="'指名率'"
+        :unit="'％'"
+        :value="nominationRate" />
 
-    <Sticker 
-      :title="'指名率'"
-      :unit="'％'"
-      :value="nominationRate" />
+      <Counter 
+        :title="'指名なし'"
+        :unit="'人'"
+        :varName="'customers'"
+        @updated="commit"
+      />
 
-    <Counter 
-      :title="'指名なし'"
-      :unit="'人'"
-      :varName="'customers'"
-      @updated="commit"
-    />
+      <Counter 
+        :title="'指名あり'"
+        :unit="'人'"
+        :varName="'appointedCustomers'"
+        @updated="commit"
+      />
 
-    <Counter 
-      :title="'指名あり'"
-      :unit="'人'"
-      :varName="'appointedCustomers'"
-      @updated="commit"
-    />
+    </div>
 
-    <h1 class="title">本日のグレイカラー率</h1>
+    <div class="grayLow">
+
+    <div class="title">本日のグレイカラー率</div>
 
     <Sticker 
       :title="'カラー施術人数'"
@@ -53,6 +57,7 @@
       @updated="commit"
     />
 
+    </div>
   </div>
 </template>
 
@@ -87,3 +92,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.UI_Build_Assistant{
+  margin: 0;
+}
+.frame{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+</style>
