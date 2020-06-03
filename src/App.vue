@@ -1,5 +1,5 @@
 <template>
-  <div class="frame">
+  <div class="frame" >
     <div class="contentLow">
       <div class="title">本日の総客・指名率</div>
 
