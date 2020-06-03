@@ -6,7 +6,8 @@
       <Sticker 
         :title="'総客'"
         :unit="'人'"
-        :value="customers + appointedCustomers" />
+        :value="customers + appointedCustomers"
+        />
 
       <Sticker 
         :title="'指名率'"
@@ -139,9 +140,18 @@ export default {
 }
 .frame{
   display: flex;
+  justify-content: space-between;
   height: calc(100vh - 200px);
   width: 80%;
   margin: 100px auto;
 }
-
+.contentLow{
+  width: 32%;
+  background-color: #F5F5F5;
+}
+.title{
+  background-color: 	#D2B48C;
+  padding: 10px 0;
+  text-align: center;
+}
 </style>
