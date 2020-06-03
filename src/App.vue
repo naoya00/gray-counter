@@ -1,6 +1,6 @@
 <template>
   <div class="frame">
-    <div class="custmersLow">
+    <div class="contentLow">
       <div class="title">本日の総客・指名率</div>
 
       <Sticker 
@@ -29,7 +29,7 @@
 
     </div>
 
-    <div class="grayLow">
+    <div class="contentLow">
 
     <div class="title">本日のグレイカラー率</div>
 
@@ -49,7 +49,7 @@
       :varName="'good'"
       @updated="commit"
     />
-
+  
     <Counter 
       :title="'グレイカラー（白髪染め）'"
       :unit="'人'"
@@ -58,6 +58,38 @@
     />
 
     </div>
+
+    <div class="contentLow">
+
+      <div class="title">オプションメニュー</div>
+
+      <Sticker 
+      :title="'パーマ施術率'"
+      :unit="'%'"
+      :value="permTreatmentRate" />
+
+      <Sticker 
+      :title="'トリートメント施術率'"
+      :unit="'%'"
+      :value="treatmentTreatmentRate" />
+
+      <Counter 
+        :title="'パーマ施術人数'"
+        :unit="'人'"
+        :varName="'perm'"
+        @updated="commit"
+      />
+
+      <Counter 
+        :title="'トリートメント施術人数'"
+        :unit="'人'"
+        :varName="'treatment'"
+        @updated="commit"
+      />
+
+    </div>
+
+    
   </div>
 </template>
 
@@ -74,7 +106,9 @@ export default {
       good: 0,
       bad: 0,
       customers: 0,
-      appointedCustomers:0
+      appointedCustomers:0,
+      perm:0,
+      treatment: 0
     }
   },
   computed: {
@@ -83,6 +117,12 @@ export default {
     },
     nominationRate () {
       return Number((this.appointedCustomers / (this.customers + this.appointedCustomers) * 100).toFixed(2)) || 0
+    },
+    permTreatmentRate () {
+      return Number((this.perm / (this.customers + this.perm) * 100).toFixed(2)) || 0
+    },
+    treatmentTreatmentRate () {
+      return Number((this.treatment / (this.customers + this.treatment) * 100).toFixed(2)) || 0
     }
   },
   methods: {
@@ -99,8 +139,9 @@ export default {
 }
 .frame{
   display: flex;
-  height: 100vh;
-  width: 100%;
+  height: calc(100vh - 200px);
+  width: 80%;
+  margin: 100px auto;
 }
 
 </style>
