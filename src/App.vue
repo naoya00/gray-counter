@@ -135,15 +135,15 @@ export default {
 </script>
 
 <style lang="scss">
-.UI_Build_Assistant{
+body{
   margin: 0;
 }
 .frame{
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 160px);
   width: 80%;
-  margin: 100px auto;
+  margin: 80px auto;
 }
 .contentLow{
   width: 32%;

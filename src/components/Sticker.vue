@@ -38,7 +38,7 @@ export default {
     text-align: center;
     margin: 20px 0;
     &--value{
-      font-size: 2.5em;
+      font-size: 2.7em;
       margin-right: 5px;
     }
     }
